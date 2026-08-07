@@ -33,9 +33,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
+        run: python -m pytest -q
         env:
           SKIP_DB_INIT: "true"
-        run: pytest -q
 
       - name: Configure AWS credentials with GitHub OIDC
         uses: aws-actions/configure-aws-credentials@v6.2.3

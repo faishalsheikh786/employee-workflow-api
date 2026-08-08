@@ -10,6 +10,9 @@ class Settings(BaseSettings):
     internal_api_key: str = "change-me"
     cors_origins: str = "http://localhost:5173"
     skip_db_init: bool = False
+    aws_region: str = "us-east-1"
+    cognito_user_pool_id: str
+    cognito_user_pool_client_id: str
 
     model_config = SettingsConfigDict(env_file=".env", case_sensitive=False)
 

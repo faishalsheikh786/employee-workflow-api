@@ -15,6 +15,8 @@ class ConnectionManager:
         self.connections[employee_id].discard(websocket)
         if not self.connections[employee_id]:
             self.connections.pop(employee_id, None)
+    def register(self, employee_id: int, websocket: WebSocket,):
+        self.connections[employee_id].add(websocket)
 
     async def send(self, employee_id: int, payload: dict):
         dead: list[WebSocket] = []
